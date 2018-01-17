@@ -1,9 +1,13 @@
-word=dict()
-fin=open("words.txt")
-def dictionary(c):
-	for char in fin:
-		word[char]=char
-	if c in word:
-		return True
+f = open('words.txt')
 
-print(dictionary('gnome'))
+def create_word_dict(c):
+	word_dict = dict()
+	for line in f:
+		word = line.strip()
+		word_dict[word] = word
+	if c in word_dict:
+		return True
+	else:
+		return False
+
+print(create_word_dict("gyan"))
